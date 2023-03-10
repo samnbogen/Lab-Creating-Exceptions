@@ -17,12 +17,6 @@ namespace ExceptionHandling
                 return Math.PI * (Radius * Radius);
             }
         }
-
-        public Circle(double radius)
-        {
-            Radius = radius;
-        }
-
         public virtual void SetRadius()
         {
             if (Radius <= 0)
@@ -30,6 +24,15 @@ namespace ExceptionHandling
                 throw new InvalidRadiusException();
             }
         }
+
+        public Circle(double radius)
+        {
+            
+            Radius = radius;
+            SetRadius();
+        }
+
+        
 
         public override string ToString()
         {
